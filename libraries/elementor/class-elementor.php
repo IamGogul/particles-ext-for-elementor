@@ -43,6 +43,12 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Elementor' ) ) {
          * Load the required dependencies for elementor.
          */
 		public function load_modules() {
+
+            /**
+             * Particles Extension
+             */
+			require_once PEFE_CONST_DIR . 'libraries/elementor/classes/class-particles.php';
+
         }
 
     }
