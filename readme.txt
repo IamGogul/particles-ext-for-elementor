@@ -13,4 +13,4 @@ License:     GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 == Description ==
-A simple extension for elementor page builder to add particles using particles.js
+Elevate your Elementor pages with stunning particle effects. Easily add dynamic particles using particles.js for an engaging visual experience.
