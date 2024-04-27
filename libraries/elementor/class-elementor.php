@@ -34,10 +34,45 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Elementor' ) ) {
 				return;
 			}
 
+            add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ], 9  );
+			add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'load_editor_assets' ]);
+
 			$this->load_modules();
 
 			do_action( 'pefe-action/plugin/elementor/loaded' );
         }
+
+		public function register_scripts() {
+            if ( ! wp_script_is( 'pefe-particles', 'enqueued' ) ) {
+                wp_register_script( 'pefe-particles',
+					PEFE_CONST_URL . 'assets/js/particles' . PEFE_CONST_DEBUG_SUFFIX . '.js',
+                    [ 'jquery' ],
+                    PEFE_CONST_VERSION,
+                    true
+                );
+			}
+
+			wp_register_script( 'pefe-elementor',
+				PEFE_CONST_URL . 'assets/js/script' . PEFE_CONST_DEBUG_SUFFIX . '.js',
+				[ 'jquery' ],
+				PEFE_CONST_VERSION,
+				true
+			);
+
+			wp_register_style( 'pefe-elementor',
+				PEFE_CONST_URL . 'assets/css/style' . PEFE_CONST_DEBUG_SUFFIX . '.css',
+				[],
+				PEFE_CONST_VERSION,
+				'all'
+			);
+		}
+
+		public function load_editor_assets() {
+			wp_enqueue_style(
+				'pefe-elementor-editor',
+				PEFE_CONST_URL . 'assets/css/elementor-editor' . PEFE_CONST_DEBUG_SUFFIX . '.css'
+			);
+		}
 
         /**
          * Load the required dependencies for elementor.
