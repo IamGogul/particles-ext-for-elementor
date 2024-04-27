@@ -8,10 +8,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Elementor_Particles_Ext_WP_Plugin_Section_Ele extends  \Elementor\Element_Section {
 
 	public function after_render() {
-        printf( '</div> %2$s </%1$s>', $this->get_html_tag(), $this->_get_particles_section() );
+        printf(
+            '</div> %2$s </%1$s>',
+            esc_attr( $this->get_html_tag() ),
+            wp_kses_post ( $this->_get_particles_section() )
+        );
     }
 
     public function _get_particles_section() {
+        $html     = '';
         $settings = $this->get_settings_for_display();
 
         if( isset( $settings['_enable_particles'] ) && $settings['_enable_particles'] == 'yes' ) {
@@ -93,11 +98,9 @@ class Elementor_Particles_Ext_WP_Plugin_Section_Ele extends  \Elementor\Element_
                 $this->add_render_attribute( 'particles', 'data-color', json_encode($colors) );
 
             $html = '<div '. $this->get_render_attribute_string( 'particles' ).'></div>';
-
-            return $html;
         }
 
-        return;
+        return $html;
     }
 
 }
