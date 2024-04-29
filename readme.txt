@@ -48,6 +48,8 @@ Elevate your Elementor pages with stunning particle effects. Easily add dynamic 
 The purpose of the Particles Extension for Elementor Plugin is to enhance the visual appeal and interactivity of Elementor-built websites by enabling users to easily add dynamic particle effects to their pages.
 = Is there a premium version with additional features? =
 As of now, it is a free plugin, and all its features are available in the free version.
+= Is Particles Extension for Elementor Plugin compatible with the latest version of WordPress? =
+Yes, it is developed to be compatible with the latest version of WordPress as well as the current version of Elementor.
 
 == Screenshots ==
 1. For Section Widget
