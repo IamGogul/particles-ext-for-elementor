@@ -41,7 +41,7 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Action_Links' ) ) {
 				$new_meta ['support'] = sprintf(
 					'<a href="%1$s" target="_blank">🤚🏾 %2$s</a>',
 					esc_url( '//wordpress.org/support/plugin/particles-ext-for-elementor/' ),
-					esc_html__( 'Support', 'pefe' )
+					esc_html__( 'Support', 'particles-ext-for-elementor' )
 				);
             }
 

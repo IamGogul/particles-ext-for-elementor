@@ -52,7 +52,7 @@ class Elementor_Particles_Ext_WP_Plugin_Section_Ele extends  \Elementor\Element_
                     $shapes[] = 'circle';
                 }
 
-                $this->add_render_attribute( 'particles', 'data-shapes', json_encode( $shapes ) );
+                $this->add_render_attribute( 'particles', 'data-shapes', wp_json_encode( $shapes ) );
 
             /**
              * Size
@@ -95,7 +95,7 @@ class Elementor_Particles_Ext_WP_Plugin_Section_Ele extends  \Elementor\Element_
                     $colors[] = '#e4f1d5';
                 }
 
-                $this->add_render_attribute( 'particles', 'data-color', json_encode($colors) );
+                $this->add_render_attribute( 'particles', 'data-color', wp_json_encode($colors) );
 
             $html = '<div '. $this->get_render_attribute_string( 'particles' ).'></div>';
         }

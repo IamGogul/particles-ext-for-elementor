@@ -49,19 +49,23 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Particles' ) ) {
 
 		public function _register_particles_section( $controls_stack, $name, $tab ) {
             $controls_stack->start_controls_section( '_stack_particles_section', [
-                'label' => sprintf( __( '%s : Particles', 'pefe'), $name ),
+                'label' => sprintf(
+					/* translators: %s: Element Name ( Section or Container ) */
+					__( '%s : Particles', 'particles-ext-for-elementor'),
+					$name
+				),
                 'tab'   => $tab
             ] );
 				$controls_stack->add_control( '_enable_particles', [
-					'label'        => esc_html__( 'Enable Particles', 'pefe' ),
+					'label'        => esc_html__( 'Enable Particles', 'particles-ext-for-elementor' ),
 					'type'         => \Elementor\Controls_Manager::SWITCHER,
-					'label_on'     => esc_html__( 'Yes', 'pefe' ),
-					'label_off'    => esc_html__( 'No', 'pefe' ),
+					'label_on'     => esc_html__( 'Yes', 'particles-ext-for-elementor' ),
+					'label_off'    => esc_html__( 'No', 'particles-ext-for-elementor' ),
 					'return_value' => 'yes',
 					'default'      => 'no',
 				] );
 				$controls_stack->add_control( '_particles_number', [
-					'label'     => esc_html__( 'Number', 'pefe' ),
+					'label'     => esc_html__( 'Number', 'particles-ext-for-elementor' ),
 					'type'      => \Elementor\Controls_Manager::NUMBER,
 					'min'       => 1,
 					'max'       => 200,
@@ -72,15 +76,15 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Particles' ) ) {
 					],
 				] );
 				$controls_stack->add_control( '_particles_shapes', [
-					'label'       => esc_html__( 'Shapes', 'pefe' ),
+					'label'       => esc_html__( 'Shapes', 'particles-ext-for-elementor' ),
 					'label_block' => true,
 					'multiple'    => true,
 					'type'        => \Elementor\Controls_Manager::SELECT2,
 					'options'     => [
-						'circle'   => esc_html__( 'Circle', 'pefe' ),
-						'edge'     => esc_html__( 'Square', 'pefe' ),
-						'star'     => esc_html__( 'Star', 'pefe' ),
-						'triangle' => esc_html__( 'Triangle', 'pefe' ),
+						'circle'   => esc_html__( 'Circle', 'particles-ext-for-elementor' ),
+						'edge'     => esc_html__( 'Square', 'particles-ext-for-elementor' ),
+						'star'     => esc_html__( 'Star', 'particles-ext-for-elementor' ),
+						'triangle' => esc_html__( 'Triangle', 'particles-ext-for-elementor' ),
 					],
 					'default'     => [
 						'circle'
@@ -90,7 +94,7 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Particles' ) ) {
 					],
 				] );
 				$controls_stack->add_control( '_particles_size', [
-					'label'     => esc_html__( 'Size', 'pefe' ),
+					'label'     => esc_html__( 'Size', 'particles-ext-for-elementor' ),
 					'type'      => \Elementor\Controls_Manager::NUMBER,
 					'min'       => 1,
 					'max'       => 100,
@@ -101,10 +105,10 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Particles' ) ) {
 					],
 				] );
 				$controls_stack->add_control( '_particles_random_size', [
-					'label'        => esc_html__( 'Enable Random Size', 'pefe' ),
+					'label'        => esc_html__( 'Enable Random Size', 'particles-ext-for-elementor' ),
 					'type'         => \Elementor\Controls_Manager::SWITCHER,
-					'label_on'     => esc_html__( 'Yes', 'pefe' ),
-					'label_off'    => esc_html__( 'No', 'pefe' ),
+					'label_on'     => esc_html__( 'Yes', 'particles-ext-for-elementor' ),
+					'label_off'    => esc_html__( 'No', 'particles-ext-for-elementor' ),
 					'return_value' => 'yes',
 					'default'      => 'yes',
 					'condition'    => [
@@ -112,44 +116,44 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Particles' ) ) {
 					],
 				] );
 				$controls_stack->add_control( '_particles_dir', [
-					'label'       => esc_html__( 'Animation Direction', 'pefe' ),
+					'label'       => esc_html__( 'Animation Direction', 'particles-ext-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::CHOOSE,
 					'label_block' => true,
 					'options'     => [
 						'none'         => [
-							'title' => esc_html__('None', 'pefe'),
+							'title' => esc_html__('None', 'particles-ext-for-elementor'),
 							'icon'  => '',
 						],
 						'top'          => [
-							'title' => esc_html__('Top', 'pefe'),
+							'title' => esc_html__('Top', 'particles-ext-for-elementor'),
 							'icon'  => 'eicon-arrow-up',
 						],
 						'top-right'    => [
-							'title' => esc_html__('Top Right', 'pefe'),
+							'title' => esc_html__('Top Right', 'particles-ext-for-elementor'),
 							'icon'  => 'eicon-arrow-up pefe-icon-rotate-45',
 						],
 						'right'        => [
-							'title' => esc_html__('Right', 'pefe'),
+							'title' => esc_html__('Right', 'particles-ext-for-elementor'),
 							'icon'  => 'eicon-arrow-right',
 						],
 						'bottom-right' => [
-							'title' => esc_html__('Bottom Right', 'pefe'),
+							'title' => esc_html__('Bottom Right', 'particles-ext-for-elementor'),
 							'icon'  => 'eicon-arrow-down pefe-icon-rotate-45-alt',
 						],
 						'bottom'       => [
-							'title' => esc_html__('Bottom', 'pefe'),
+							'title' => esc_html__('Bottom', 'particles-ext-for-elementor'),
 							'icon'  => 'eicon-arrow-down',
 						],
 						'bottom-left'  => [
-							'title' => esc_html__('Bottom Left', 'pefe'),
+							'title' => esc_html__('Bottom Left', 'particles-ext-for-elementor'),
 							'icon'  => 'eicon-arrow-down pefe-icon-rotate-45',
 						],
 						'left'         => [
-							'title' => esc_html__('Left', 'pefe'),
+							'title' => esc_html__('Left', 'particles-ext-for-elementor'),
 							'icon'  => 'eicon-arrow-left',
 						],
 						'top-left'     => [
-							'title' => esc_html__('Top Left', 'pefe'),
+							'title' => esc_html__('Top Left', 'particles-ext-for-elementor'),
 							'icon'  => 'eicon-arrow-up pefe-icon-rotate-45-alt',
 						],
 					],
@@ -160,10 +164,10 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Particles' ) ) {
 					],
 				] );
 				$controls_stack->add_control( '_enable_particles_line_linked', [
-					'label'        => esc_html__( 'Enable Linked Line', 'pefe' ),
+					'label'        => esc_html__( 'Enable Linked Line', 'particles-ext-for-elementor' ),
 					'type'         => \Elementor\Controls_Manager::SWITCHER,
-					'label_on'     => esc_html__( 'Yes', 'pefe' ),
-					'label_off'    => esc_html__( 'No', 'pefe' ),
+					'label_on'     => esc_html__( 'Yes', 'particles-ext-for-elementor' ),
+					'label_off'    => esc_html__( 'No', 'particles-ext-for-elementor' ),
 					'return_value' => 'yes',
 					'default'      => 'no',
 					'condition'    => [
@@ -171,7 +175,7 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Particles' ) ) {
 					],
 				] );
 				$controls_stack->add_control( '_particles_line_linked_color', [
-					'label'     => esc_html__( 'Linked Line Color', 'pefe' ),
+					'label'     => esc_html__( 'Linked Line Color', 'particles-ext-for-elementor' ),
 					'type'      => \Elementor\Controls_Manager::COLOR,
 					'default'   => '',
 					'condition' => [
@@ -182,11 +186,11 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Particles' ) ) {
 
 				$repeater = new \Elementor\Repeater();
 				$repeater->add_control( '_particles_color', [
-					'label' => esc_html__( 'Color', 'pefe' ),
+					'label' => esc_html__( 'Color', 'particles-ext-for-elementor' ),
 					'type'  => \Elementor\Controls_Manager::COLOR,
 				]);
 				$controls_stack->add_control( '_particles_color_item', [
-					'label'     => esc_html__( 'Colors', 'pefe' ),
+					'label'     => esc_html__( 'Colors', 'particles-ext-for-elementor' ),
 					'type'      => \Elementor\Controls_Manager::REPEATER,
 					'fields'    => $repeater->get_controls(),
 					'default'   => [],

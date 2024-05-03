@@ -11,7 +11,7 @@
  * Author URI: https://profiles.wordpress.org/iamgogul/
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * Text Domain: pefe
+ * Text Domain: particles-ext-for-elementor
  * Domain Path: /languages
  */
 
@@ -140,9 +140,9 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin' ) ) {
 			if( !is_plugin_active( 'elementor/elementor.php' ) ) {
 
 				add_action( 'admin_notices', function() {
-                    /* translators: %s: html tags */
                     $message = sprintf(
-                        esc_html__( 'The %1$s Particles extension for Elementor %2$s plugin requires %1$sElementor%2$s plugin. Kindly install and activate it.', 'pefe' ),
+						/* translators: %s: html tags */
+                        esc_html__( 'The %1$s Particles extension for Elementor %2$s plugin requires %1$sElementor%2$s plugin. Kindly install and activate it.', 'particles-ext-for-elementor' ),
                         '<strong>',
                         '</strong>'
                     );
@@ -162,7 +162,7 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin' ) ) {
 								) ),
 								'activate-plugin_elementor/elementor.php'
 							),
-							esc_html__( 'Activate Elementor', 'pefe' )
+							esc_html__( 'Activate Elementor', 'particles-ext-for-elementor' )
 						);
 					} else if( $is_elementor_installed && current_user_can( 'install_plugins' ) ) {
 						$button = sprintf( '<a href="%1$s" class="button-primary">%2$s</a>',
@@ -174,7 +174,7 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin' ) ) {
 								) ),
 								'install-plugin_elementor'
 							),
-							esc_html__( 'Install Elementor', 'pefe' )
+							esc_html__( 'Install Elementor', 'particles-ext-for-elementor' )
                         );
 					}
 

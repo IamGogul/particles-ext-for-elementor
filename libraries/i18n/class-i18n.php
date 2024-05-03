@@ -43,7 +43,7 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_i18n' ) ) {
 		 * Load plugin textdomain for i18n.
 		 */
 		public function load_plugin_textdomain() {
-			load_plugin_textdomain( 'pefe', false, plugin_basename( dirname( PEFE_CONST_FILE ) ) . '/languages');
+			load_plugin_textdomain( 'particles-ext-for-elementor', false, plugin_basename( dirname( PEFE_CONST_FILE ) ) . '/languages');
 		}
 
     }

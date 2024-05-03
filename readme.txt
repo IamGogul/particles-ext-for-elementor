@@ -1,16 +1,16 @@
 === Particles extension for Elementor ===
 Contributors:iamgogul
-Tags: elementor, particles, free, wordpress
-Requires PHP: 7.0
+Tags:elementor, particles, free, elementor
+Stable tag:1.0.0
+License:GPLv2 or later
+License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Requires PHP:7.0
 Requires at least:
 	WordPress 5.X
 	Elementor Website Builder 3.20.X
 Tested up to:
 	WordPress 6.5.2
 	Elementor Website Builder 3.21.3
-Stable tag: 1.0.0
-License:     GPLv2 or later
-License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 == Description ==
 Elevate your Elementor pages with stunning particle effects. Easily add dynamic particles using particles.js for an engaging visual experience.
