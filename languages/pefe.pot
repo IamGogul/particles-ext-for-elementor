@@ -1,11 +1,11 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2023-12-10 21:43+0530\n"
+"Project-Id-Version: Particles Extension for Elementor\n"
+"POT-Creation-Date: 2024-05-03 11:30+0530\n"
 "PO-Revision-Date: 2023-10-02 20:07+0530\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: M Gogul Saravanan\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,118 +16,130 @@ msgstr ""
 "esc_attr_e;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: fontflow-custom-icons-for-elementor.php:150
+#: libraries/admin/class-action-links.php:44
+msgid "Support"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:52
+#, php-format
+msgid "%s : Particles"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:56
+msgid "Enable Particles"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:58
+#: libraries/elementor/classes/class-particles.php:106
+#: libraries/elementor/classes/class-particles.php:165
+msgid "Yes"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:59
+#: libraries/elementor/classes/class-particles.php:107
+#: libraries/elementor/classes/class-particles.php:166
+msgid "No"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:64
+msgid "Number"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:75
+msgid "Shapes"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:80
+msgid "Circle"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:81
+msgid "Square"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:82
+msgid "Star"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:83
+msgid "Triangle"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:93
+msgid "Size"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:104
+msgid "Enable Random Size"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:115
+msgid "Animation Direction"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:120
+msgid "None"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:124
+msgid "Top"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:128
+msgid "Top Right"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:132
+msgid "Right"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:136
+msgid "Bottom Right"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:140
+msgid "Bottom"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:144
+msgid "Bottom Left"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:148
+msgid "Left"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:152
+msgid "Top Left"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:163
+msgid "Enable Linked Line"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:174
+msgid "Linked Line Color"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:185
+msgid "Color"
+msgstr ""
+
+#: libraries/elementor/classes/class-particles.php:189
+msgid "Colors"
+msgstr ""
+
+#: particles-ext-for-elementor.php:145
 #, php-format
 msgid ""
-"The %1$s FontFlow Custom Icons for Elementor %2$s plugin is compatible with "
+"The %1$s Particles extension for Elementor %2$s plugin requires "
 "%1$sElementor%2$s plugin. Kindly install and activate it."
 msgstr ""
 
-#: fontflow-custom-icons-for-elementor.php:170
+#: particles-ext-for-elementor.php:165
 msgid "Activate Elementor"
 msgstr ""
 
-#: fontflow-custom-icons-for-elementor.php:182
+#: particles-ext-for-elementor.php:177
 msgid "Install Elementor"
-msgstr ""
-
-#: libraries/admin/class-admin.php:60
-msgid "Settings"
-msgstr ""
-
-#: libraries/elementor/classes/class-devicons.php:238
-msgid "FontFlow - DevIcons"
-msgstr ""
-
-#: libraries/elementor/classes/class-eleganticons.php:406
-msgid "FontFlow - ElegantIcons"
-msgstr ""
-
-#: libraries/elementor/classes/class-feathericons.php:328
-msgid "FontFlow - FeatherIcons"
-msgstr ""
-
-#: libraries/elementor/classes/class-linearicons.php:216
-msgid "FontFlow - LinearIcons"
-msgstr ""
-
-#: libraries/elementor/classes/class-lineicons.php:1590
-msgid "FontFlow - LineIcons"
-msgstr ""
-
-#: libraries/settings/class-settings-api.php:57
-#: libraries/settings/class-settings-api.php:106
-msgid "something went wrong."
-msgstr ""
-
-#: libraries/settings/class-settings-api.php:71
-#: libraries/settings/class-settings-api.php:72
-msgid "🎖️ FontFlow"
-msgstr ""
-
-#: libraries/settings/class-settings-api.php:96
-#: libraries/settings/class-welcome-screen.php:141
-msgid "Disable"
-msgstr ""
-
-#: libraries/settings/class-settings-api.php:101
-#: libraries/settings/class-welcome-screen.php:143
-msgid "Enable"
-msgstr ""
-
-#: libraries/settings/class-welcome-screen.php:39
-msgid "FontFlow Custom Icons Library for Elementor."
-msgstr ""
-
-#: libraries/settings/class-welcome-screen.php:41
-msgid ""
-"Elevate your Elementor website with FontFlow Custom Icons, a dynamic plugin "
-"that seamlessly integrates an extensive icon library."
-msgstr ""
-
-#: libraries/settings/class-welcome-screen.php:43
-msgid "Learn more about this plugin."
-msgstr ""
-
-#: libraries/settings/class-welcome-screen.php:69
-msgid ""
-"Devicons is a full statck iconic font made for developers, code jedis, "
-"ninjas, HTTPsters, evangelists and nerds."
-msgstr ""
-
-#: libraries/settings/class-welcome-screen.php:79
-msgid ""
-"The Elegant Icon Font – 360 Of The Best Free Icons For The Modern Web. They "
-"are vector based and can expand and contract without quality degradation. "
-"The result is crisp, beautiful graphics on any display (including Retina "
-"displays)."
-msgstr ""
-
-#: libraries/settings/class-welcome-screen.php:89
-msgid ""
-"Feather is a collection of simply beautiful open-source icons. Each icon is "
-"designed on a 24x24 grid with an emphasis on simplicity, consistency, and "
-"flexibility."
-msgstr ""
-
-#: libraries/settings/class-welcome-screen.php:99
-msgid ""
-"The Linearicons icon pack includes a font that you can install and use in "
-"any application with a custom text tool.This font comes with hundreds of "
-"ligatures, making it easy to find and use the icons."
-msgstr ""
-
-#: libraries/settings/class-welcome-screen.php:109
-msgid ""
-"Line Awesome consists of ~1380 flat line icons that offer complete coverage "
-"of the main Font Awesome icon set. This icon-font is based off of the Icons8 "
-"Windows 10 style, which consists of over 4,000 icons."
-msgstr ""
-
-#: libraries/settings/class-welcome-screen.php:127
-msgid "By"
-msgstr ""
-
-#: libraries/settings/class-welcome-screen.php:133
-msgid "Learn More"
 msgstr ""
