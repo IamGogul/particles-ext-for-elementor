@@ -21,19 +21,19 @@ class Elementor_Particles_Ext_WP_Plugin_Section_Ele extends  \Elementor\Element_
 
         if( isset( $settings['_enable_particles'] ) && $settings['_enable_particles'] == 'yes' ) {
 
-            wp_enqueue_script( 'pefe-particles' );
-            wp_enqueue_script( 'pefe-elementor' );
-            wp_enqueue_style( 'pefe-elementor' );
+            wp_enqueue_script( 'mgs-pefe-particles' );
+            wp_enqueue_script( 'mgs-pefe-elementor' );
+            wp_enqueue_style( 'mgs-pefe-elementor' );
 
             /**
              * ID
              */
-                $this->add_render_attribute( 'particles', 'id', 'section-pefe-particles-'.esc_attr( $this->get_id() ) );
+                $this->add_render_attribute( 'particles', 'id', 'section-mgs-pefe-particles-'.esc_attr( $this->get_id() ) );
 
             /**
              * Class
              */
-                $this->add_render_attribute( 'particles', 'class', 'pefe-particles' );
+                $this->add_render_attribute( 'particles', 'class', 'mgs-pefe-particles' );
 
             /**
              * Number
@@ -74,7 +74,7 @@ class Elementor_Particles_Ext_WP_Plugin_Section_Ele extends  \Elementor\Element_
              */
                 $this->add_render_attribute( 'particles', 'data-line-linked', esc_attr( $settings['_enable_particles_line_linked'] ) );
                 if( $settings['_enable_particles_line_linked'] === 'yes' ) {
-                    $this->add_render_attribute( 'particles', 'class', 'pefe-particles-has-linked' );
+                    $this->add_render_attribute( 'particles', 'class', 'mgs-pefe-particles-has-linked' );
                 }
 
             /**

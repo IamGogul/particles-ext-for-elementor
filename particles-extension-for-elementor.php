@@ -4,14 +4,14 @@
  *
  *
  * Plugin Name: Particles Extension for Elementor
- * Plugin URI:  https://wordpress.org/plugins/particles-ext-for-elementor
+ * Plugin URI:  https://wordpress.org/plugins/particles-extension-for-elementor
  * Description: Elevate your Elementor pages with stunning particle effects. Easily add dynamic particles using particles.js for an engaging visual experience.
  * Version: 1.0.0
  * Author: 🎖️ M Gogul Saravanan
  * Author URI: https://profiles.wordpress.org/iamgogul/
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * Text Domain: particles-ext-for-elementor
+ * Text Domain: particles-extension-for-elementor
  * Domain Path: /languages
  */
 
@@ -23,8 +23,8 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Debug
  */
-if( !function_exists( 'pefe_debug' ) ) {
-	function pefe_debug( $arg = NULL ) {
+if( !function_exists( 'mgs_pefe_debug' ) ) {
+	function mgs_pefe_debug( $arg = NULL ) {
 		echo '<pre>';
 		var_dump( $arg );
 		echo '</pre>';
@@ -34,8 +34,8 @@ if( !function_exists( 'pefe_debug' ) ) {
 /**
  * Check whether a plugin installed.
  */
-if( !function_exists( 'pefe_is_plugin_active' ) ) {
-	function pefe_is_plugin_active( $plugin_file_path = NULL ) {
+if( !function_exists( 'mgs_pefe_is_plugin_active' ) ) {
+	function mgs_pefe_is_plugin_active( $plugin_file_path = NULL ) {
 		$plugins = get_plugins();
 		return isset( $plugins[ $plugin_file_path ] );
 	}
@@ -70,28 +70,28 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin' ) ) {
 			register_activation_hook( __FILE__, [ $this, 'activate_plugin' ] );
 			register_deactivation_hook( __FILE__, [ $this, 'deactivate_plugin' ] );
 
-			do_action( 'pefe-action/plugin/loaded' );
+			do_action( 'mgs-pefe-action/plugin/loaded' );
 		}
 
 		/**
 		 * Define plugin required constants
 		 */
 		private function define_constants() {
-			$this->define( 'PEFE_CONST_SERVER_SOFTWARE', sanitize_text_field( $_SERVER['SERVER_SOFTWARE'] ) );
-            $this->define( 'PEFE_CONST_FILE', __FILE__ );
+			$this->define( 'MGS_PEFE_CONST_SERVER_SOFTWARE', sanitize_text_field( $_SERVER['SERVER_SOFTWARE'] ) );
+            $this->define( 'MGS_PEFE_CONST_FILE', __FILE__ );
 
 			if( ! function_exists('get_plugin_data') ){
 				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 			}
 
-			$plugin_data = get_plugin_data( PEFE_CONST_FILE );
-            $this->define( 'PEFE_CONST_PLUGIN_NAME', sanitize_text_field( $plugin_data['Name'] ) );
-            $this->define( 'PEFE_CONST_SAN_PLUGIN_NAME', sanitize_title( $plugin_data['Name'] ) );
-            $this->define( 'PEFE_CONST_VERSION', sanitize_text_field( $plugin_data['Version'] ) );
-            $this->define( 'PEFE_CONST_DIR', trailingslashit( plugin_dir_path( PEFE_CONST_FILE ) ) );
-			$this->define( 'PEFE_CONST_URL', trailingslashit( plugin_dir_url( PEFE_CONST_FILE ) ) );
-			$this->define( 'PEFE_CONST_BASENAME', plugin_basename( PEFE_CONST_FILE ) );
-			$this->define( 'PEFE_CONST_DEBUG_SUFFIX', ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) );
+			$plugin_data = get_plugin_data( MGS_PEFE_CONST_FILE );
+            $this->define( 'MGS_PEFE_CONST_PLUGIN_NAME', sanitize_text_field( $plugin_data['Name'] ) );
+            $this->define( 'MGS_PEFE_CONST_SAN_PLUGIN_NAME', sanitize_title( $plugin_data['Name'] ) );
+            $this->define( 'MGS_PEFE_CONST_VERSION', sanitize_text_field( $plugin_data['Version'] ) );
+            $this->define( 'MGS_PEFE_CONST_DIR', trailingslashit( plugin_dir_path( MGS_PEFE_CONST_FILE ) ) );
+			$this->define( 'MGS_PEFE_CONST_URL', trailingslashit( plugin_dir_url( MGS_PEFE_CONST_FILE ) ) );
+			$this->define( 'MGS_PEFE_CONST_BASENAME', plugin_basename( MGS_PEFE_CONST_FILE ) );
+			$this->define( 'MGS_PEFE_CONST_DEBUG_SUFFIX', ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) );
 		}
 
 		/**
@@ -115,18 +115,18 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin' ) ) {
 			 * The class responsible for defining all actions that occur in the admin area.
 			 */
 			if( is_admin() ) {
-				require_once PEFE_CONST_DIR . 'libraries/admin/class-admin.php';
+				require_once MGS_PEFE_CONST_DIR . 'libraries/admin/class-admin.php';
 			}
 
 			/**
              * Include internationalization functionality of the plugin.
              */
-			require_once PEFE_CONST_DIR . 'libraries/i18n/class-i18n.php';
+			require_once MGS_PEFE_CONST_DIR . 'libraries/i18n/class-i18n.php';
 
 			/**
 			 * Elementor
 			 */
-			require_once PEFE_CONST_DIR . 'libraries/elementor/class-elementor.php';
+			require_once MGS_PEFE_CONST_DIR . 'libraries/elementor/class-elementor.php';
 		}
 
 		/**
@@ -142,13 +142,13 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin' ) ) {
 				add_action( 'admin_notices', function() {
                     $message = sprintf(
 						/* translators: %s: html tags */
-                        esc_html__( 'The %1$s Particles extension for Elementor %2$s plugin requires %1$sElementor%2$s plugin. Kindly install and activate it.', 'particles-ext-for-elementor' ),
+                        esc_html__( 'The %1$s Particles extension for Elementor %2$s plugin requires %1$sElementor%2$s plugin. Kindly install and activate it.', 'particles-extension-for-elementor' ),
                         '<strong>',
                         '</strong>'
                     );
 
 					$button = '';
-					$is_elementor_installed = pefe_is_plugin_active( 'elementor/elementor.php' );
+					$is_elementor_installed = mgs_pefe_is_plugin_active( 'elementor/elementor.php' );
 
 					if( $is_elementor_installed && current_user_can( 'activate_plugins' ) ) {
 						$button = sprintf( '<a href="%1$s" class="button-primary">%2$s</a>',
@@ -162,7 +162,7 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin' ) ) {
 								) ),
 								'activate-plugin_elementor/elementor.php'
 							),
-							esc_html__( 'Activate Elementor', 'particles-ext-for-elementor' )
+							esc_html__( 'Activate Elementor', 'particles-extension-for-elementor' )
 						);
 					} else if( $is_elementor_installed && current_user_can( 'install_plugins' ) ) {
 						$button = sprintf( '<a href="%1$s" class="button-primary">%2$s</a>',
@@ -174,7 +174,7 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin' ) ) {
 								) ),
 								'install-plugin_elementor'
 							),
-							esc_html__( 'Install Elementor', 'particles-ext-for-elementor' )
+							esc_html__( 'Install Elementor', 'particles-extension-for-elementor' )
                         );
 					}
 
@@ -208,14 +208,14 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin' ) ) {
 
 }
 
-if( !function_exists( 'pefe_wp_plugin' ) ) {
+if( !function_exists( 'mgs_pefe_wp_plugin' ) ) {
     /**
      * Returns instance of the Elementor Particles Extension WP Plugin class.
      */
-    function pefe_wp_plugin() {
+    function mgs_pefe_wp_plugin() {
         return Elementor_Particles_Ext_WP_Plugin::get_instance();
     }
 }
 
-pefe_wp_plugin();
+mgs_pefe_wp_plugin();
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

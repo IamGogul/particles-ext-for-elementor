@@ -31,17 +31,17 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Action_Links' ) ) {
 
         public function __construct() {
             add_filter( 'plugin_row_meta', [ $this, 'plugin_row_meta' ], 10, 4 );
-			do_action( 'pefe-action/plugin/action-links/loaded' );
+			do_action( 'mgs-pefe-action/plugin/action-links/loaded' );
         }
 
         public function plugin_row_meta( $plugin_meta, $plugin_file, $plugin_data, $status ) {
             $new_meta = [];
 
-            if( PEFE_CONST_BASENAME === $plugin_file ) {
+            if( MGS_PEFE_CONST_BASENAME === $plugin_file ) {
 				$new_meta ['support'] = sprintf(
 					'<a href="%1$s" target="_blank">🤚🏾 %2$s</a>',
-					esc_url( '//wordpress.org/support/plugin/particles-ext-for-elementor/' ),
-					esc_html__( 'Support', 'particles-ext-for-elementor' )
+					esc_url( '//wordpress.org/support/plugin/particles-extension-for-elementor/' ),
+					esc_html__( 'Support', 'particles-extension-for-elementor' )
 				);
             }
 
@@ -51,14 +51,14 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Action_Links' ) ) {
 
 }
 
-if( !function_exists( 'pefe_wp_plugin_action_links' ) ) {
+if( !function_exists( 'mgs_pefe_wp_plugin_action_links' ) ) {
     /**
      * Returns instance of the class.
      */
-    function pefe_wp_plugin_action_links() {
+    function mgs_pefe_wp_plugin_action_links() {
         return Elementor_Particles_Ext_WP_Plugin_Action_Links::get_instance();
     }
 }
 
-pefe_wp_plugin_action_links();
+mgs_pefe_wp_plugin_action_links();
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

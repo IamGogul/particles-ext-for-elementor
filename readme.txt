@@ -5,12 +5,10 @@ Stable tag:1.0.0
 License:GPLv2 or later
 License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Requires PHP:7.0
-Requires at least:
-	WordPress 5.X
+Requires at least: 5.0
 	Elementor Website Builder 3.20.X
-Tested up to:
-	WordPress 6.5.2
-	Elementor Website Builder 3.21.3
+Tested up to: 6.5.3
+	Elementor Website Builder 3.21.8
 
 == Description ==
 Elevate your Elementor pages with stunning particle effects. Easily add dynamic particles using particles.js for an engaging visual experience.
@@ -33,7 +31,7 @@ Elevate your Elementor pages with stunning particle effects. Easily add dynamic 
 
 = How to use =
 1.First, install and activate the [Elementor Page Builder Plugin.](https://wordpress.org/plugins/elementor/)This plugin is necessary to use Particles extension for Elementor Plugin.
-2.Next, install & activate the [Particles extension for Elementor Plugin](https://wordpress.org/plugins/particles-ext-for-elementor)
+2.Next, install & activate the [Particles extension for Elementor Plugin](https://wordpress.org/plugins/particles-extension-for-elementor)
 3.Once both plugins are activated, when editing a page with Elementor this plugin adds "Section Particles" or "Container Particles" settings section.
 
 = Adding Particle Effects =

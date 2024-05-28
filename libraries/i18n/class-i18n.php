@@ -35,7 +35,7 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_i18n' ) ) {
         public function __construct() {
 			add_action( 'plugins_loaded', [ $this, 'load_plugin_textdomain' ] );
 
-			do_action( 'pefe-action/plugin/i18n/loaded' );
+			do_action( 'mgs-pefe-action/plugin/i18n/loaded' );
 
         }
 
@@ -43,23 +43,23 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_i18n' ) ) {
 		 * Load plugin textdomain for i18n.
 		 */
 		public function load_plugin_textdomain() {
-			load_plugin_textdomain( 'particles-ext-for-elementor', false, plugin_basename( dirname( PEFE_CONST_FILE ) ) . '/languages');
+			load_plugin_textdomain( 'particles-extension-for-elementor', false, plugin_basename( dirname( MGS_PEFE_CONST_FILE ) ) . '/languages');
 		}
 
     }
 
 }
 
-if( !function_exists( 'pefe_wp_plugin_i18n' ) ) {
+if( !function_exists( 'mgs_pefe_wp_plugin_i18n' ) ) {
 
     /**
      * Returns the instance of a class.
      */
-    function pefe_wp_plugin_i18n() {
+    function mgs_pefe_wp_plugin_i18n() {
 
         return Elementor_Particles_Ext_WP_Plugin_i18n::get_instance();
     }
 }
 
-pefe_wp_plugin_i18n();
+mgs_pefe_wp_plugin_i18n();
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

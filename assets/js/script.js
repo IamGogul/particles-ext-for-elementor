@@ -1,7 +1,7 @@
 ;(function ($) {
     $(document).ready(function(){
         setTimeout(function(){
-            $(".pefe-particles").each(function(){
+            $(".mgs-pefe-particles").each(function(){
                 let $id         = $(this).attr("id"),
                     $number     = $(this).data("number"),
                     $shapes     = $(this).data("shapes"),

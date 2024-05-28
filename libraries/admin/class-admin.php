@@ -29,24 +29,24 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Admin' ) ) {
         public function __construct() {
             $this->load_modules();
 
-			do_action( 'pefe-action/plugin/admin/loaded' );
+			do_action( 'mgs-pefe-action/plugin/admin/loaded' );
         }
 
         public function load_modules() {
-            require_once PEFE_CONST_DIR . 'libraries/admin/class-action-links.php';
+            require_once MGS_PEFE_CONST_DIR . 'libraries/admin/class-action-links.php';
         }
 	}
 
 }
 
-if( !function_exists( 'pefe_wp_plugin_admin' ) ) {
+if( !function_exists( 'mgs_pefe_wp_plugin_admin' ) ) {
     /**
      * Returns instance of the class.
      */
-    function pefe_wp_plugin_admin() {
+    function mgs_pefe_wp_plugin_admin() {
         return Elementor_Particles_Ext_WP_Plugin_Admin::get_instance();
     }
 }
 
-pefe_wp_plugin_admin();
+mgs_pefe_wp_plugin_admin();
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

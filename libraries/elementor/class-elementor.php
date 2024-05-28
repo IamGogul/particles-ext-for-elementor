@@ -39,38 +39,41 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Elementor' ) ) {
 
 			$this->load_modules();
 
-			do_action( 'pefe-action/plugin/elementor/loaded' );
+			do_action( 'mgs-pefe-action/plugin/elementor/loaded' );
         }
 
 		public function register_scripts() {
-            if ( ! wp_script_is( 'pefe-particles', 'enqueued' ) ) {
-                wp_register_script( 'pefe-particles',
-					PEFE_CONST_URL . 'assets/js/particles' . PEFE_CONST_DEBUG_SUFFIX . '.js',
+            if ( ! wp_script_is( 'mgs-pefe-particles', 'enqueued' ) ) {
+                wp_register_script( 'mgs-pefe-particles',
+					MGS_PEFE_CONST_URL . 'assets/js/particles' . MGS_PEFE_CONST_DEBUG_SUFFIX . '.js',
                     [ 'jquery' ],
-                    PEFE_CONST_VERSION,
+                    MGS_PEFE_CONST_VERSION,
                     true
                 );
 			}
 
-			wp_register_script( 'pefe-elementor',
-				PEFE_CONST_URL . 'assets/js/script' . PEFE_CONST_DEBUG_SUFFIX . '.js',
+			wp_register_script( 'mgs-pefe-elementor',
+				MGS_PEFE_CONST_URL . 'assets/js/script' . MGS_PEFE_CONST_DEBUG_SUFFIX . '.js',
 				[ 'jquery' ],
-				PEFE_CONST_VERSION,
+				MGS_PEFE_CONST_VERSION,
 				true
 			);
 
-			wp_register_style( 'pefe-elementor',
-				PEFE_CONST_URL . 'assets/css/style' . PEFE_CONST_DEBUG_SUFFIX . '.css',
+			wp_register_style( 'mgs-pefe-elementor',
+				MGS_PEFE_CONST_URL . 'assets/css/style' . MGS_PEFE_CONST_DEBUG_SUFFIX . '.css',
 				[],
-				PEFE_CONST_VERSION,
+				MGS_PEFE_CONST_VERSION,
 				'all'
 			);
 		}
 
 		public function load_editor_assets() {
 			wp_enqueue_style(
-				'pefe-elementor-editor',
-				PEFE_CONST_URL . 'assets/css/elementor-editor' . PEFE_CONST_DEBUG_SUFFIX . '.css'
+				'mgs-pefe-elementor-editor',
+				MGS_PEFE_CONST_URL . 'assets/css/elementor-editor' . MGS_PEFE_CONST_DEBUG_SUFFIX . '.css',
+				[],
+				MGS_PEFE_CONST_VERSION,
+				'all'
 			);
 		}
 
@@ -82,7 +85,7 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Elementor' ) ) {
             /**
              * Particles Extension
              */
-			require_once PEFE_CONST_DIR . 'libraries/elementor/classes/class-particles.php';
+			require_once MGS_PEFE_CONST_DIR . 'libraries/elementor/classes/class-particles.php';
 
         }
 
@@ -90,16 +93,16 @@ if( !class_exists( 'Elementor_Particles_Ext_WP_Plugin_Elementor' ) ) {
 
 }
 
-if( !function_exists( 'pefe_wp_plugin_elementor' ) ) {
+if( !function_exists( 'mgs_pefe_wp_plugin_elementor' ) ) {
 
     /**
      * Returns the instance of a class.
      */
-    function pefe_wp_plugin_elementor() {
+    function mgs_pefe_wp_plugin_elementor() {
 
         return Elementor_Particles_Ext_WP_Plugin_Elementor::get_instance();
     }
 }
 
-pefe_wp_plugin_elementor();
+mgs_pefe_wp_plugin_elementor();
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
