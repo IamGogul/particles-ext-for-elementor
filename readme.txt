@@ -12,6 +12,7 @@ Tested up to: 6.5.3
 
 == Description ==
 Elevate your Elementor pages with stunning particle effects. Easily add dynamic particles using particles.js for an engaging visual experience.
+**[Demo](https://gogul.pro/ext/particles-extension-for-elementor/)**
 
 = How to install Particles extension for Elementor Plugin =
 1.Login to Your WordPress Dashboard
@@ -50,8 +51,8 @@ As of now, it is a free plugin, and all its features are available in the free v
 Yes, it is developed to be compatible with the latest version of WordPress as well as the current version of Elementor.
 
 == Screenshots ==
-1. For Section Widget
-2. For Container Widget
+1. For Container Widget
+2. For Section Widget
 3. Showing Frontend
 
 == Changelog ==
